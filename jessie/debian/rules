@@ -10,3 +10,4 @@ DH_VERBOSE=1
 build/openacalendar::
 	echo "Building OpenACalendar"
 	cp config.dist.php config.php
+	php composer.phar install
