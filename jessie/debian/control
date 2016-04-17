@@ -3,7 +3,7 @@ Maintainer: Greg Sutcliffe <greg.sutcliffe@gmail.com>
 Section: web
 Priority: extra
 Standards-Version: 3.9.1
-Build-Depends: debhelper (>= 7), cdbs, php5
+Build-Depends: debhelper (>= 7), cdbs, php5, curl
 Homepage: http://ican.openacalendar.org/
 
 Package: openacalendar
