@@ -1,5 +1,5 @@
 #!/bin/sh
-# postinst script for tracks
+# postinst script for openacalendar
 #
 # see: dh_installdeb(1)
 
@@ -15,7 +15,7 @@ HOME=/usr/share/openacalendar
 # hang if daemons have been started
 trap db_stop EXIT
 
-# Add the "tracks" user and group
+# Add the "openacalendar" user and group
 getent group openacalendar >/dev/null || groupadd -r openacalendar
 getent passwd openacalendar >/dev/null || \
     useradd -r -g openacalendar -d /usr/share/openacalendar -s /usr/sbin/nologin -c "OpenACalendar" openacalendar

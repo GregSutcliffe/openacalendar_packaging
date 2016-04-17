@@ -21,7 +21,7 @@ case "$1" in
 		fi
 		# package-generated or runtime files are removed
 		rm -rf /var/cache/openacalendar
-		rm -rf /etc/tracks
+		rm -rf /etc/openacalendar
 	;;
 	*)
 		echo "postrm called with unknown argument \`$1'" >&2
