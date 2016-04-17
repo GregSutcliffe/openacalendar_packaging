@@ -1,0 +1,49 @@
+Index: OpenACalendar/config.dist.php
+===================================================================
+--- OpenACalendar.orig/config.dist.php
++++ OpenACalendar/config.dist.php
+@@ -1,9 +1,9 @@
+ <?php
+ 
+ /**
+- * Config file. For a full list of options, please see 
++ * Config file. For a full list of options, please see
+  * http://docs.openacalendar.org/
+- * 
++ *
+  * @link http://docs.openacalendar.org/ Config File Options
+  * @link http://ican.openacalendar.org/ OpenACalendar Open Source Software
+  * @license http://ican.openacalendar.org/license.html 3-clause BSD
+@@ -33,7 +33,7 @@ $CONFIG->siteTitle = "Open A Calendar";
+  */
+ $CONFIG->isSingleSiteMode = TRUE;
+ 
+-/** 
++/**
+  * If single site mode, what is the ID of the calendar that this will serve?
+  * If you created the calendar as part of the install procedure it will almost certainly be 1,
+  */
+@@ -42,12 +42,12 @@ $CONFIG->singleSiteID = 1;
+ /**
+  * For Single Site mode these are all the same.
+  * For Multi Site mode these are all different and webSiteDomain must allow subdomains.
+- * eg a value of "example.co.uk" should allow and serve any domain "*.example.co.uk" 
++ * eg a value of "example.co.uk" should allow and serve any domain "*.example.co.uk"
+  */
+ $CONFIG->webIndexDomain = "www.example.co.uk";
+ $CONFIG->webSiteDomain = "example.co.uk";
+ 
+-/** Is SSL available? **/ 
++/** Is SSL available? **/
+ $CONFIG->hasSSL = FALSE;
+ $CONFIG->webIndexDomainSSL = "www.example.co.uk";
+ $CONFIG->webSiteDomainSSL = "example.co.uk";
+@@ -63,7 +63,7 @@ $CONFIG->webCommonSessionDomain = "examp
+  * A folder writeable by the app in which to store uploaded files.
+  * Back this up along side your database!
+  */
+-//$CONFIG->fileStoreLocation= '/OpenACalendarFileStore';
++$CONFIG->fileStoreLocation= '/var/lib/openacalendar/';
+ 
+ 
+ /**

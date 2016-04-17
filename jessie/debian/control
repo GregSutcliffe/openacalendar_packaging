@@ -1,24 +1,18 @@
-Source: tracks
+Source: openacalendar
 Maintainer: Greg Sutcliffe <greg.sutcliffe@gmail.com>
 Section: web
 Priority: extra
 Standards-Version: 3.9.1
-Build-Depends: debhelper (>= 7), cdbs, bundler (>= 1.7), ruby-dev,
-               git | git-core, libsqlite3-dev, libxml2-dev, libmysqlclient-dev,
-               build-essential, libzip-dev
-Homepage: http://http://www.getontracks.org/
+Build-Depends: debhelper (>= 7), cdbs
+Homepage: http://ican.openacalendar.org/
 
-Package: tracks
+Package: openacalendar
 Architecture: any
 Section: web
 Priority: extra
-Depends: ruby, bundler (>= 1.7), ruby-dev, build-essential,
-         libsqlite3-dev, libmysqlclient-dev, libxml2-dev,
-         libzip-dev, ${misc:Depends}
-Description: Open source Rails Getting Things Done (GTD) implementation.
- Tracks is a web-based application to help you implement David Allen’s
- Getting Things Done methodology. It was built using Ruby on Rails, and
- comes with a built-in webserver (WEBrick), so that you can run it on
- your own computer if you like. It can be run on any platform on which
- Ruby can be installed, including Mac OS X, Windows and Linux. Tracks is
- Open Source, free and licensed under the GNU GPL.
+Depends: ruby, bundler (>= 1.7), php5, apache2, ${misc:Depends}
+Description: OpenACalendar is an Open Source collaborative group wiki calendar,
+  with strong Open Data tools baked in.  We can let any user add and edit
+  events, like a wiki, or only certain users can have edit rights. All edits
+  and deletes are versioned to ensure safety, like a wiki.  There are feeds and
+  an API so exporting the data into the system of your choice should be easy.

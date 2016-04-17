@@ -1,4 +1,3 @@
-etc/tracks
-var/lib/tracks
-var/log/tracks
-var/cache/tracks
+etc/openacalendar
+var/cache/openacalendar
+var/lib/openacalendar

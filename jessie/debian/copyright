@@ -1,13 +1,13 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: tracks
-Source: http://github.com/TracksApp/tracks
+Upstream-Name: openacalendar
+Source: https://github.com/OpenACalendar/OpenACalendar-Web-Core
 
 Files: *
-Copyright: 2004-2014 rousette.org.uk
-License: GPL-2 or later
+Copyright: JMB Technologies Ltd
+License: Custom
 
 Files: debian/*
-Copyright: 2015 Greg Sutcliffe <greg.sutcliffe@gmail.com>
+Copyright: 2016 Greg Sutcliffe <greg.sutcliffe@gmail.com>
 License: GPL-2 or later
 
 License: GPL-2
