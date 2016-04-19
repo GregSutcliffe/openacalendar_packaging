@@ -10,7 +10,7 @@ Package: openacalendar
 Architecture: any
 Section: web
 Priority: extra
-Depends: ruby, bundler (>= 1.7), php5, apache2, ${misc:Depends}
+Depends: php5, apache2, ${misc:Depends}
 Description: OpenACalendar is an Open Source collaborative group wiki calendar,
   with strong Open Data tools baked in.  We can let any user add and edit
   events, like a wiki, or only certain users can have edit rights. All edits
