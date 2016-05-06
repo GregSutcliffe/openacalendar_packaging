@@ -12,3 +12,4 @@ webSingleSite         usr/share/openacalendar
 webSite               usr/share/openacalendar
 webSysAdmin           usr/share/openacalendar
 webSysAdminNotSecure  usr/share/openacalendar
+debian/pgsql          usr/share/dbconfig-common/scripts/openacalendar/install

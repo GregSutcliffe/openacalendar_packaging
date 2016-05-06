@@ -1,0 +1,10 @@
+#!/bin/sh
+# config maintainer script for foo-mysql
+
+# source debconf stuff
+. /usr/share/debconf/confmodule
+# we support mysql and pgsql
+dbc_dbtypes="pgsql"
+# source dbconfig-common stuff
+. /usr/share/dbconfig-common/dpkg/config
+dbc_go openacalendar $@

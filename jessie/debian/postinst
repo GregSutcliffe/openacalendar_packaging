@@ -25,16 +25,10 @@ chown -Rf openacalendar:openacalendar '/var/cache/openacalendar'
 chmod 755 '/var/lib/openacalendar'
 chmod 755 '/var/cache/openacalendar'
 
-# Ensure the psql login is in config.pp
-# ...
-
-# Do db stuff here once the postgresql config is in place
-# cd $HOME && php core/cli/upgradeDatabase.php
-# cd $HOME && php core/cli/loadStaticData.php
-
-# test for and potentially add admin and slug
-# cd $HOME && php core/cli/createUser.php USERNAME EMAIL PASSWORD sysadmin
-# cd $HOME && php core/cli/createSite.php SLUG EMAIL
+# DBConfig
+. /usr/share/dbconfig-common/dpkg/postinst
+dbc_generate_include='php:/etc/openacalendar/dbconfig.php'
+dbc_go openacalendar $@
 
 # Own all the core files
 chown -Rf openacalendar:openacalendar $HOME

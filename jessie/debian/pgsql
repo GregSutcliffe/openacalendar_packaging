@@ -1,0 +1,11 @@
+#!/bin/bash
+
+cd /usr/share/openacalendar
+
+# Safe to always do, I think
+php5 core/cli/upgradeDatabase.php
+php5 core/cli/loadStaticData.php
+
+# Definitely only do these once, somehow
+php5 core/cli/createUser.php admin admin@`hostname -f` 12345678 sysadmin
+php5 core/cli/createSite.php site admin@`hostname -f`

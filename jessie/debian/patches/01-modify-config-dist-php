@@ -2,43 +2,42 @@ Index: OpenACalendar/config.dist.php
 ===================================================================
 --- OpenACalendar.orig/config.dist.php
 +++ OpenACalendar/config.dist.php
-@@ -1,9 +1,9 @@
- <?php
+@@ -10,6 +10,19 @@
+  */
  
  /**
-- * Config file. For a full list of options, please see 
-+ * Config file. For a full list of options, please see
-  * http://docs.openacalendar.org/
-- * 
-+ *
-  * @link http://docs.openacalendar.org/ Config File Options
-  * @link http://ican.openacalendar.org/ OpenACalendar Open Source Software
-  * @license http://ican.openacalendar.org/license.html 3-clause BSD
-@@ -33,7 +33,7 @@ $CONFIG->siteTitle = "Open A Calendar";
-  */
- $CONFIG->isSingleSiteMode = TRUE;
- 
--/** 
++ * Changes by Debian Packaging
++ * dbconfig-common writes db config to /etc/openacalendar/dbconfig.php
++ * so load it here and refernce it
++ */
++
++include '/etc/openacalendar/dbconfig.php';
++/*
++ * dbconfig uses '' as a default which openacalendar doesn't like
++ * so we change it to localhost in that scenario
++ * */
++$dbserver = ($dbserver == "" ? "localhost" : $dbserver);
++
 +/**
-  * If single site mode, what is the ID of the calendar that this will serve?
-  * If you created the calendar as part of the install procedure it will almost certainly be 1,
+  * Is in Debug mode?
   */
-@@ -42,12 +42,12 @@ $CONFIG->singleSiteID = 1;
+ $CONFIG->isDebug = false;
+@@ -17,10 +30,10 @@
  /**
-  * For Single Site mode these are all the same.
-  * For Multi Site mode these are all different and webSiteDomain must allow subdomains.
-- * eg a value of "example.co.uk" should allow and serve any domain "*.example.co.uk" 
-+ * eg a value of "example.co.uk" should allow and serve any domain "*.example.co.uk"
+  * DB details.
   */
- $CONFIG->webIndexDomain = "www.example.co.uk";
- $CONFIG->webSiteDomain = "example.co.uk";
+-$CONFIG->databaseName = 'openacalendar';
+-$CONFIG->databaseHost = 'localhost';
+-$CONFIG->databaseUser = 'openacalendar';
+-$CONFIG->databasePassword = 'password';
++$CONFIG->databaseName = $dbname;
++$CONFIG->databaseHost = $dbserver;
++$CONFIG->databaseUser = $dbuser;
++$CONFIG->databasePassword = $dbpass;
  
--/** Is SSL available? **/ 
-+/** Is SSL available? **/
- $CONFIG->hasSSL = FALSE;
- $CONFIG->webIndexDomainSSL = "www.example.co.uk";
- $CONFIG->webSiteDomainSSL = "example.co.uk";
-@@ -63,7 +63,7 @@ $CONFIG->webCommonSessionDomain = "examp
+ /**
+  * Site Title.
+@@ -63,7 +76,7 @@
   * A folder writeable by the app in which to store uploaded files.
   * Back this up along side your database!
   */
