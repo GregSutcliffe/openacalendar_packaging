@@ -25,9 +25,21 @@ chown -Rf openacalendar:openacalendar '/var/cache/openacalendar'
 chmod 755 '/var/lib/openacalendar'
 chmod 755 '/var/cache/openacalendar'
 
+# Site Config (needs better logic to handle upgrades & SSL)
+sed -i "s/webIndexDomain = .*/webIndexDomain = 'www.`hostname -f`';/" /etc/openacalendar/config.php
+sed -i "s/webSiteDomain = .*/webSiteDomain = '`hostname -f`';/" /etc/openacalendar/config.php
+sed -i "s/webCommonSessionDomain = .*/webCommonSessionDomain = '`hostname -f`';/" /etc/openacalendar/config.php
+
+sed -i "s/ServerName REPLACEME/ServerName `hostname -f`/" /etc/apache2/sites-available/05-openacalendar.conf
+sed -i "s/ServerAdmin REPLACEME/ServerAdmin `hostname -f`/" /etc/apache2/sites-available/05-openacalendar.conf
+a2enmod rewrite
+a2ensite 05-openacalendar.conf
+echo "Restart Apache2 to enable OpenACalendar"
+
 # DBConfig
 . /usr/share/dbconfig-common/dpkg/postinst
 dbc_generate_include='php:/etc/openacalendar/dbconfig.php'
+dbc_generate_include_owner='www-data'
 dbc_go openacalendar $@
 
 # Own all the core files

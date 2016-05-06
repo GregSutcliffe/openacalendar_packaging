@@ -4,8 +4,10 @@
 set -e
 
 . /usr/share/debconf/confmodule
-#. /usr/share/dbconfig-common/dpkg/prerm
-#dbc_go openacalendar $@
+. /usr/share/dbconfig-common/dpkg/prerm
+dbc_go openacalendar $@
+
+a2dissite 05-openacalendar.conf
 
 #DEBHELPER#
 
