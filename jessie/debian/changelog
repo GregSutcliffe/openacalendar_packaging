@@ -1,3 +1,9 @@
+openacalendar (1.6.1-1) stable; urgency=low
+
+  * 1.6.1-1 released
+
+ -- Greg Sutcliffe <greg.sutcliffe@gmail.com>  Sun, 08 May 2016 21:38:26 +0100
+
 openacalendar (1.6.0-1) stable; urgency=low
 
   * Initial build
