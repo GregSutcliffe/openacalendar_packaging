@@ -28,6 +28,7 @@ sed -i "s/webCommonSessionDomain = .*/webCommonSessionDomain = '`hostname -f`';/
 sed -i "s/ServerName REPLACEME/ServerName `hostname -f`/" /etc/apache2/sites-available/05-openacalendar.conf
 sed -i "s/ServerAdmin REPLACEME/ServerAdmin `hostname -f`/" /etc/apache2/sites-available/05-openacalendar.conf
 a2enmod rewrite
+a2dissite 000-default
 a2ensite 05-openacalendar.conf
 echo "Restart Apache2 to enable OpenACalendar"
 
