@@ -1,5 +1,6 @@
 # Install the basic application files
 config.php                   etc/openacalendar
+build                        usr/share/openacalendar
 CONTRIBUTING.md              usr/share/openacalendar
 core                         usr/share/openacalendar
 extension                    usr/share/openacalendar
